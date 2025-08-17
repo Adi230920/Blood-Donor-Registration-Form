@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blood Donor Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Theme Toggle (Top Right) -->
+  <button id="theme-toggle">🌙</button>
+
+  <div class="container">
+    <h1>Blood Donor Registration Form</h1>
+    
+    <form id="donorForm">
+      <label>Full Name:</label>
+      <input type="text" id="name" required>
+
+      <label>Age:</label>
+      <input type="number" id="age" min="18" required>
+
+      <label>Gender:</label>
+      <select id="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+      </select>
+
+      <label>Blood Type:</label>
+      <select id="bloodType" required>
+        <option value="">Select Blood Type</option>
+        <option>A+</option><option>A-</option>
+        <option>B+</option><option>B-</option>
+        <option>AB+</option><option>AB-</option>
+        <option>O+</option><option>O-</option>
+      </select>
+
+      <label>Contact Number:</label>
+      <input type="tel" id="contact" pattern="[0-9]{10}" required placeholder="10 digit number">
+
+      <label>Email:</label>
+      <input type="email" id="email" required>
+
+      <label>Address:</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <label>Medical History (Optional):</label>
+      <textarea id="medical" rows="4" placeholder="Any medical conditions..."></textarea>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

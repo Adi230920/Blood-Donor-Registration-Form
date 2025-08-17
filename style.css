@@ -1,0 +1,180 @@
+/* ===== Light & Dark Theme Variables ===== */
+:root {
+  /* 🌞 Light Mode Colors */
+  --bg: #f4f6f9;
+  --text: #222;
+  --card: linear-gradient(135deg, #ffffff, #f9f9ff);
+  --btn-bg: #4a90e2;     /* Blue button */
+  --btn-hover: #357abd; 
+  --btn-text: #fff;
+  --input-bg: #ffffff;
+  --input-border: #ccc;
+  --input-text: #222;
+}
+
+body.dark {
+  /* 🌙 Dark Mode */
+  --bg: #121826;
+  --text: #e4e7ef;
+  --card: #1e293b;
+  --btn-bg: #4a90e2;     /* Keep blue in dark mode */
+  --btn-hover: #357abd;
+  --input-bg: #0f172a;
+  --input-border: #475569;
+  --input-text: #e4e7ef;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  padding: 20px;
+}
+
+/* ===== Theme Toggle (Top Right, Mobile Friendly) ===== */
+#theme-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--card);
+  border: 1px solid var(--text);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+  z-index: 1000;
+}
+#theme-toggle:hover {
+  background: var(--btn-bg);
+  color: var(--btn-text);
+}
+
+/* ===== Container ===== */
+.container {
+  background: var(--card);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.15);
+  width: 400px;
+  text-align: center;
+  transition: background 0.3s, color 0.3s;
+  border: 1px solid #eaeaea; /* Subtle border in light mode */
+}
+
+/* ===== Optional: Add Image on Top ===== */
+.container img {
+  width: 80px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+/* ===== Form ===== */
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  text-align: left;
+  margin-top: 10px;
+  font-weight: bold;
+}
+input, select, textarea {
+  margin-top: 5px;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--input-bg);
+  color: var(--input-text);
+  font-family: 'Segoe UI', sans-serif;  /* Same font everywhere */
+  transition: background 0.3s, color 0.3s, border 0.3s, box-shadow 0.3s;
+}
+input:focus, textarea:focus, select:focus {
+  border-color: #4a90e2;
+  box-shadow: 0px 0px 6px rgba(74, 144, 226, 0.6); /* Blue glow in both modes */
+}
+input::placeholder, textarea::placeholder {
+  color: #888;
+}
+
+/* ===== Buttons ===== */
+button {
+  margin-top: 20px;
+  padding: 12px;
+  border: none;
+  background: var(--btn-bg);  /* Always blue */
+  color: var(--btn-text);
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+  font-family: 'Segoe UI', sans-serif;
+}
+button:hover {
+  background: var(--btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+}
+
+/* ===== Profile Card ===== */
+.profile-card {
+  text-align: left;
+  padding: 15px;
+  border-radius: 10px;
+  background: var(--bg);
+  border: 1px solid var(--text);
+  line-height: 1.8;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+.profile-card p {
+  margin: 8px 0;
+}
+.profile-card b {
+  color: #4a90e2; /* Highlight in blue */
+}
+
+/* ===== Back Button ===== */
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  background: var(--btn-bg);
+  color: var(--btn-text);
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.back-btn:hover {
+  background: var(--btn-hover);
+  transform: scale(1.05);
+}
+
+/* ===== Responsive Layout ===== */
+@media (max-width: 500px) {
+  .container {
+    width: 90%;
+    padding: 15px;
+  }
+  input, select, textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+  #theme-toggle {
+    padding: 6px 9px;
+    font-size: 14px;
+    top: 10px;
+    right: 10px;
+  }
+}
